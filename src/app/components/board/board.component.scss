@@ -1,0 +1,57 @@
+.game {
+  padding: 20px;
+}
+
+.board {
+  width: 75%;
+  padding: 20px;
+}
+
+.input__option {
+  color: chocolate;
+}
+
+.input__button {
+  color: chocolate;
+  background: lightblue;
+}
+
+.row__cell {
+  border: 1px;
+  border-color: blue;
+  border-style: dashed;
+  color: chocolate;
+  background: lightblue;
+  font-weight: bold;
+}
+
+.input {
+  margin: 20px;
+  width: 75%;
+}
+
+.results {
+  margin: 20px;
+  width: 75%;
+}
+
+.entry {
+  display: flex;
+  padding: 1px;
+  align-items: center;
+}
+
+.start__input {
+  padding-top: 10px;
+}
+
+.start__label {
+  font-weight: bold;
+  color: brown;
+}
+
+.start__value {
+  font-weight: bold;
+  font-size: large;
+  align-content: center;
+}

@@ -1,0 +1,68 @@
+<div class="game">
+  <div class="board">
+    <div class="row">
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(0,0) && recordInput(0,0)">
+          {{getCellValue(0,0)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(0,1) && recordInput(0,1)">
+          {{getCellValue(0,1)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(0,2) && recordInput(0,2)">
+          {{getCellValue(0,2)}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="row">
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(1,0) && recordInput(1,0)">
+          {{getCellValue(1,0)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(1,1) && recordInput(1,1)">
+          {{getCellValue(1,1)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(1,2) && recordInput(1,2)">
+          {{getCellValue(1,2)}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="row">
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(2,0) && recordInput(2,0)">
+          {{getCellValue(2,0)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(2,1) && recordInput(2,1)">
+          {{getCellValue(2,1)}}
+        </mat-grid-tile>
+        <mat-grid-tile class="row__cell" [colspan]="2" [rowspan]="2" (click)="!getCellState(2,2) && recordInput(2,2)">
+          {{getCellValue(2,2)}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+
+  <div class="input" *ngIf="!isGameOn">
+    <mat-form-field>
+      <mat-select placeholder="Pick to Start" [(ngModel)]="current">
+        <mat-option class="input__option" [value]="options[0]">X</mat-option>
+        <mat-option class="input__option" [value]="options[1]">O</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button class="input__button" mat-raised-button (click)="startGame()">Click to Start</button>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="row" *ngIf="isGameOver && isDrawn">
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile class="row__cell" [colspan]="6" [rowspan]="1">GAME OVER - It's a Draw</mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="row" *ngIf="isGameOver && isWon">
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile class="row__cell" [colspan]="6" [rowspan]="1">GAME OVER - Winner is {{winner}}</mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
