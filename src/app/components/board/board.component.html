@@ -48,8 +48,8 @@
         <mat-option class="input__option" [value]="options[1]">O</mat-option>
       </mat-select>
     </mat-form-field>
-    <div>
-      <button class="input__button" mat-raised-button (click)="startGame()">Click to Start</button>
+    <div class="start__button">
+      <button class="input__button" mat-raised-button (click)="startGame()">Start</button>
     </div>
   </div>
 
@@ -63,6 +63,9 @@
       <mat-grid-list cols="20" rowHeight="1:1">
         <mat-grid-tile class="row__cell" [colspan]="6" [rowspan]="1">GAME OVER - Winner is {{winner}}</mat-grid-tile>
       </mat-grid-list>
+    </div>
+    <div class="start__button" *ngIf="isGameOver">
+      <button class="input__button" mat-raised-button (click)="startOver()">Start Over</button>
     </div>
   </div>
 </div>

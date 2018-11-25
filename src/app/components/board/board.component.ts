@@ -79,6 +79,18 @@ export class BoardComponent {
     }
   }
 
+  clearCells() {
+    this.setCellValue(0, 0, '');
+    this.setCellValue(0, 1, '');
+    this.setCellValue(0, 2, '');
+    this.setCellValue(1, 0, '');
+    this.setCellValue(1, 1, '');
+    this.setCellValue(1, 2, '');
+    this.setCellValue(2, 0, '');
+    this.setCellValue(2, 1, '');
+    this.setCellValue(2, 2, '');
+  }
+
   won(value1: string, value2: string, value3: string): boolean {
     if ((value1 === 'X' || value1 == 'O') && (value1 === value2) && (value2 === value3)) {
       this.winner = value1;
@@ -108,6 +120,13 @@ export class BoardComponent {
 
   startGame() {
     this.isGameOn = true;
+  }
+
+  startOver() {
+    this.isGameOver = false;
+    this.isGameOn = false;
+    this.current = '';
+    this.clearCells();
   }
 }
 
